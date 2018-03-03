@@ -25,7 +25,7 @@ const styleavt = {
   top: "90px",
 }
 
-const styles ={
+const styleb ={
   position: "relative",
   top: "-20px",
   left: "390px",
@@ -49,7 +49,7 @@ const iconButtonElement = (
 
 const rightIconMenu = (
   <IconMenu iconButtonElement={iconButtonElement}>
-    <MenuItem {<RaisedButton type="submit" label="Post" backgroundColor=" #808080" style={style} /}>Reply</MenuItem>
+    <MenuItem <RaisedButton type="submit" label="Post" backgroundColor=" #808080" style={styleb} />Reply</MenuItem>
     <MenuItem>Forward</MenuItem>
     <MenuItem>Delete</MenuItem>
   </IconMenu>
