@@ -10,7 +10,6 @@ import Avatar from 'material-ui/Avatar';
 const style ={
   backgroundColor: 'rgba(22,22,22, 0.4)',
 
-
 }
 
 
@@ -27,12 +26,3 @@ const HomePage = () => (
 );
 
 export default HomePage;
-
-/*
-    <Paper zDepth={4} className="loginform">
-      <TextField hintText="Email address" style={style} underlineShow={false} />
-      <Divider />
-      <TextField hintText="Email address" style={style} underlineShow={false} />
-      <Divider />
-    </Paper>
-*/

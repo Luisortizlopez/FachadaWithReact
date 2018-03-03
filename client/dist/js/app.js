@@ -22469,7 +22469,7 @@
 	    },
 	    cardMedia: {
 	      color: _colors.darkWhite,
-	      overlayContentBackground: _colors.lightBlack,
+	      overlayContentBackground: _colors.darkBlack,
 	      titleColor: _colors.darkWhite,
 	      subtitleColor: _colors.lightWhite
 	    },
@@ -22733,6 +22733,7 @@
 
 	  return muiTheme;
 	}
+
 
 /***/ }),
 /* 191 */
@@ -35059,15 +35060,6 @@
 
 	exports.default = HomePage;
 
-	/*
-	    <Paper zDepth={4} className="loginform">
-	      <TextField hintText="Email address" style={style} underlineShow={false} />
-	      <Divider />
-	      <TextField hintText="Email address" style={style} underlineShow={false} />
-	      <Divider />
-	    </Paper>
-	*/
-
 /***/ }),
 /* 399 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42423,20 +42415,14 @@
 	var style = { margin: 5 };
 
 	var Dashboard = function Dashboard() {
-	  return _react2.default.createElement(
-	    _List2.default,
-	    null,
-	    _react2.default.createElement(_ListItem2.default, {
-	      disabled: true,
-	      leftAvatar: _react2.default.createElement(_Avatar2.default, {
-	        icon: _react2.default.createElement(_FontIcon2.default, { className: 'muidocs-icon-communication-voicemail' }),
-	        color: _colors.orange200,
-	        backgroundColor: _colors.deepOrange300,
-	        size: 200,
-	        style: style
-	      })
+	  return _react2.default.createElement(_ListItem2.default, {
+	    disabled: true,
+	    leftAvatar: _react2.default.createElement(_Avatar2.default, {
+	      src: '../css/7a6bd4465d9c28213edb2bcae4a549bc.jpg',
+	      size: 250,
+	      style: style
 	    })
-	  );
+	  });
 	};
 
 	exports.default = Dashboard;
@@ -46761,17 +46747,52 @@
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
+	var _Paper = __webpack_require__(408);
+
+	var _Paper2 = _interopRequireDefault(_Paper);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	var style = {
+	  backgroundColor: 'rgba(22,22,22, 0.4)',
+	  color: '#B22222'
+	};
+
+	var styleb = {
+	  marginRight: "5px",
+	  marginLeft: "10px",
+	  borderColor: "#0000000",
+	  border: "3px"
+	};
+
+	var styles = {
+	  errorStyle: {
+	    color: '#B22222'
+	  },
+	  underlineStyle: {
+	    borderColor: '#B22222'
+	  },
+	  floatingLabelStyle: {
+	    color: '#B22222'
+	  },
+	  floatingLabelFocusStyle: {
+	    color: '#B22222'
+	  }
+	};
+
 	var LoginForm = function LoginForm(_ref) {
+	  var _React$createElement, _React$createElement2;
+
 	  var onSubmit = _ref.onSubmit,
 	      onChange = _ref.onChange,
 	      errors = _ref.errors,
 	      successMessage = _ref.successMessage,
 	      user = _ref.user;
 	  return _react2.default.createElement(
-	    _Card.Card,
-	    { className: 'container' },
+	    _Paper2.default,
+	    { style: style, className: 'container' },
 	    _react2.default.createElement(
 	      'form',
 	      { action: '/', onSubmit: onSubmit },
@@ -46793,30 +46814,30 @@
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'field-line' },
-	        _react2.default.createElement(_TextField2.default, {
-	          floatingLabelText: 'Email',
-	          name: 'email',
-	          errorText: errors.email,
-	          onChange: onChange,
-	          value: user.email
-	        })
+	        _react2.default.createElement(_TextField2.default, (_React$createElement = {
+	          floatingLabelText: 'Styled Floating Label Text',
+	          floatingLabelStyle: styles.floatingLabelStyle,
+	          floatingLabelFocusStyle: styles.floatingLabelFocusStyle,
+	          hintText: 'Custom Underline Focus Color',
+	          underlineFocusStyle: styles.underlineStyle
+	        }, _defineProperty(_React$createElement, 'floatingLabelText', 'Email'), _defineProperty(_React$createElement, 'name', 'email'), _defineProperty(_React$createElement, 'errorText', errors.email), _defineProperty(_React$createElement, 'onChange', onChange), _defineProperty(_React$createElement, 'value', user.email), _React$createElement))
 	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'field-line' },
-	        _react2.default.createElement(_TextField2.default, {
-	          floatingLabelText: 'Password',
-	          type: 'password',
-	          name: 'password',
-	          onChange: onChange,
-	          errorText: errors.password,
-	          value: user.password
-	        })
+	        _react2.default.createElement(_TextField2.default, (_React$createElement2 = {
+	          floatingLabelText: 'Styled Floating Label Text',
+	          floatingLabelStyle: styles.floatingLabelStyle,
+	          floatingLabelFocusStyle: styles.floatingLabelFocusStyle,
+	          hintText: 'Custom Underline Focus Color',
+	          underlineFocusStyle: styles.underlineStyle
+	        }, _defineProperty(_React$createElement2, 'floatingLabelText', 'Password'), _defineProperty(_React$createElement2, 'type', 'password'), _defineProperty(_React$createElement2, 'name', 'password'), _defineProperty(_React$createElement2, 'onChange', onChange), _defineProperty(_React$createElement2, 'errorText', errors.password), _defineProperty(_React$createElement2, 'value', user.password), _React$createElement2))
 	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'button-line' },
-	        _react2.default.createElement(_RaisedButton2.default, { type: 'submit', label: 'Log in', primary: true })
+	        _react2.default.createElement(_RaisedButton2.default, { type: 'submit', label: 'Log in', backgroundColor: ' #808080', style: styleb }),
+	        _react2.default.createElement(_RaisedButton2.default, { type: 'submit', label: 'Sign up', backgroundColor: ' #808080', style: styleb })
 	      ),
 	      _react2.default.createElement(
 	        _Card.CardText,
@@ -47519,16 +47540,51 @@
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
+	var _Paper = __webpack_require__(408);
+
+	var _Paper2 = _interopRequireDefault(_Paper);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	var style = {
+	  backgroundColor: 'rgba(22,22,22, 0.4)',
+	  color: '#B22222'
+	};
+
+	var styleb = {
+	  marginRight: "5px",
+	  marginLeft: "10px",
+	  borderColor: "#0000000",
+	  border: "3px"
+	};
+
+	var styles = {
+	  errorStyle: {
+	    color: '#B22222'
+	  },
+	  underlineStyle: {
+	    borderColor: '#B22222'
+	  },
+	  floatingLabelStyle: {
+	    color: '#B22222'
+	  },
+	  floatingLabelFocusStyle: {
+	    color: '#B22222'
+	  }
+	};
+
 	var SignUpForm = function SignUpForm(_ref) {
+	  var _React$createElement, _React$createElement2, _React$createElement3;
+
 	  var onSubmit = _ref.onSubmit,
 	      onChange = _ref.onChange,
 	      errors = _ref.errors,
 	      user = _ref.user;
 	  return _react2.default.createElement(
-	    _Card.Card,
-	    { className: 'container' },
+	    _Paper2.default,
+	    { className: 'container1', style: style },
 	    _react2.default.createElement(
 	      'form',
 	      { action: '/', onSubmit: onSubmit },
@@ -47545,41 +47601,40 @@
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'field-line' },
-	        _react2.default.createElement(_TextField2.default, {
-	          floatingLabelText: 'Name',
-	          name: 'name',
-	          errorText: errors.name,
-	          onChange: onChange,
-	          value: user.name
-	        })
+	        _react2.default.createElement(_TextField2.default, (_React$createElement = {
+	          floatingLabelText: 'Styled Floating Label Text',
+	          floatingLabelStyle: styles.floatingLabelStyle,
+	          floatingLabelFocusStyle: styles.floatingLabelFocusStyle,
+	          hintText: 'Custom Underline Focus Color',
+	          underlineFocusStyle: styles.underlineStyle
+	        }, _defineProperty(_React$createElement, 'floatingLabelText', 'Name'), _defineProperty(_React$createElement, 'name', 'name'), _defineProperty(_React$createElement, 'errorText', errors.name), _defineProperty(_React$createElement, 'onChange', onChange), _defineProperty(_React$createElement, 'value', user.name), _React$createElement))
 	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'field-line' },
-	        _react2.default.createElement(_TextField2.default, {
-	          floatingLabelText: 'Email',
-	          name: 'email',
-	          errorText: errors.email,
-	          onChange: onChange,
-	          value: user.email
-	        })
+	        _react2.default.createElement(_TextField2.default, (_React$createElement2 = {
+	          floatingLabelText: 'Styled Floating Label Text',
+	          floatingLabelStyle: styles.floatingLabelStyle,
+	          floatingLabelFocusStyle: styles.floatingLabelFocusStyle,
+	          hintText: 'Custom Underline Focus Color',
+	          underlineFocusStyle: styles.underlineStyle
+	        }, _defineProperty(_React$createElement2, 'floatingLabelText', 'Email'), _defineProperty(_React$createElement2, 'name', 'email'), _defineProperty(_React$createElement2, 'errorText', errors.email), _defineProperty(_React$createElement2, 'onChange', onChange), _defineProperty(_React$createElement2, 'value', user.email), _React$createElement2))
 	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'field-line' },
-	        _react2.default.createElement(_TextField2.default, {
-	          floatingLabelText: 'Password',
-	          type: 'password',
-	          name: 'password',
-	          onChange: onChange,
-	          errorText: errors.password,
-	          value: user.password
-	        })
+	        _react2.default.createElement(_TextField2.default, (_React$createElement3 = {
+	          floatingLabelText: 'Styled Floating Label Text',
+	          floatingLabelStyle: styles.floatingLabelStyle,
+	          floatingLabelFocusStyle: styles.floatingLabelFocusStyle,
+	          hintText: 'Custom Underline Focus Color',
+	          underlineFocusStyle: styles.underlineStyle
+	        }, _defineProperty(_React$createElement3, 'floatingLabelText', 'Password'), _defineProperty(_React$createElement3, 'type', 'password'), _defineProperty(_React$createElement3, 'name', 'password'), _defineProperty(_React$createElement3, 'onChange', onChange), _defineProperty(_React$createElement3, 'errorText', errors.password), _defineProperty(_React$createElement3, 'value', user.password), _React$createElement3))
 	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'button-line' },
-	        _react2.default.createElement(_RaisedButton2.default, { type: 'submit', label: 'Create New Account', primary: true })
+	        _react2.default.createElement(_RaisedButton2.default, { type: 'submit', label: 'Create New Account', backgroundColor: ' #808080', style: styleb })
 	      ),
 	      _react2.default.createElement(
 	        _Card.CardText,

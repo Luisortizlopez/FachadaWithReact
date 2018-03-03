@@ -10,21 +10,17 @@ import {Table,TableBody,TableHeader,TableHeaderColumn,TableRow,TableRowColumn,} 
 const style = {margin: 5};
 
 const Dashboard = () => (
-  <List>
     <ListItem
       disabled={true}
       leftAvatar={
         <Avatar
-          icon={<FontIcon className="muidocs-icon-communication-voicemail" />}
-          color={orange200}
-          backgroundColor={deepOrange300}
-          size={200}
+          src="../css/7a6bd4465d9c28213edb2bcae4a549bc.jpg"
+          size={250}
           style={style}
         />
       }
     >
     </ListItem>
-    </List>
 
 );
 
