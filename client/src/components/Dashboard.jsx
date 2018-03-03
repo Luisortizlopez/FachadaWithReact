@@ -1,23 +1,31 @@
 import React, { PropTypes } from 'react';
+import {List, ListItem} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
-import FileFolder from 'material-ui/svg-icons/file/folder';
-import FontIcon from 'material-ui/FontIcon';
-import List from 'material-ui/List/List';
-import ListItem from 'material-ui/List/ListItem';
-import {blue300,indigo900,orange200,deepOrange300,pink400,purple500} from 'material-ui/styles/colors';
-import {Table,TableBody,TableHeader,TableHeaderColumn,TableRow,TableRowColumn,} from 'material-ui/Table';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
+import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const style = {margin: 5};
-
-const styles = {
-  width: '25%',
-  height: '50%',
+const style = {
+position: "relative",
+top: "0px",
+left: "130px",
+width: "65%",
 }
 
-const styleb ={
+const style2={
+  width: "65%",
+}
+const styleavt = {
+  position: "relative",
+  top: "90px",
+}
+
+const styles ={
   position: "relative",
   top: "-20px",
   left: "390px",
@@ -28,44 +36,107 @@ const styleb ={
   border: "3px",
 }
 
-const Dashboard = () => (
-  <div>
-    <ListItem className="avt"
-      disabled={true}
-      leftAvatar={
-        <Avatar
-          src="../css/7a6bd4465d9c28213edb2bcae4a549bc.jpg"
-          size={150}
-          style={style}
-        />
-      }
-    >
-    </ListItem>
 
-<br />
-    <br />
-      <Paper style={styles} className="Desc">
-
-          <div className="field-line">
-            <TextField
-       floatingLabelText="Description"
-       multiLine={true}
-       rows={2}
-       rowsMax={4}
-     />
-        </div>
-      </Paper>
-
-      <br />
-          <br />
-
-      <div className="Post">
-        <RaisedButton type="submit" label="Post" backgroundColor=" #808080" style={styleb} />
-      </div>
-
-</div>
+const iconButtonElement = (
+  <IconButton
+    touch={true}
+    tooltip="more"
+    tooltipPosition="bottom-left"
+  >
+    <MoreVertIcon color={grey400} />
+  </IconButton>
 );
 
+const rightIconMenu = (
+  <IconMenu iconButtonElement={iconButtonElement}>
+    <MenuItem {<RaisedButton type="submit" label="Post" backgroundColor=" #808080" style={style} /}>Reply</MenuItem>
+    <MenuItem>Forward</MenuItem>
+    <MenuItem>Delete</MenuItem>
+  </IconMenu>
+);
+
+
+const Dashboard = () => (
+  <div>
+
+       <List>
+         <Subheader>Today</Subheader>
+         <div> <Avatar style={styleavt} size={80} src="../css/marco.jpg" /> </div>
+         <ListItem
+           rightIconButton={rightIconMenu}
+           style={style}
+           primaryText="Marco Castillo"
+           secondaryText={
+             <p>
+               <span style={{color: darkBlack}}>Job Description</span><br />
+               I&apos;ll be needing to paint my newly remodeled garage this weekend. Anyone interested, please contact me asap.
+             </p>
+           }
+           secondaryTextLines={2}
+         />
+       <Divider style={style2} inset={true} />
+         <div><Avatar style={styleavt} size={80} src="../css/mando.jpg" /></div>
+         <ListItem
+            style={style}
+           rightIconButton={rightIconMenu}
+           primaryText="Armando Cano"
+           secondaryText={
+             <p>
+               <span style={{color: darkBlack}}>Job Description</span><br />
+               Wish I could come, but I&apos;m out of town this weekend.
+             </p>
+           }
+           secondaryTextLines={2}
+         />
+         <Divider style={style2} inset={true} />
+         <div><Avatar style={styleavt} size={80} src="../css/alex.jpg" /></div>
+         <ListItem
+            style={style}
+           rightIconButton={rightIconMenu}
+           primaryText="Alex Castillo"
+           secondaryText={
+             <p>
+               <span style={{color: darkBlack}}>Job Description</span><br />
+               Do you have any Paris recs? Have you ever been?
+             </p>
+           }
+           secondaryTextLines={2}
+         />
+         <Divider style={style2} inset={true} />
+         <div><Avatar style={styleavt} size={80} src="../css/nando.jpg" /></div>
+         <ListItem
+          style={style}
+           rightIconButton={rightIconMenu}
+           primaryText="Fernado Ortiz"
+           secondaryText={
+             <p>
+               <span style={{color: darkBlack}}>Job Description</span><br />
+               Do you have any ideas what we can get Heidi for her birthday? How about a pony?
+             </p>
+           }
+           secondaryTextLines={2}
+         />
+         <Divider style={style2} inset={true} />
+         <div><Avatar style={styleavt} size={80} src="../css/lalo.jpg" /></div>
+         <ListItem
+           style={style}
+           rightIconButton={rightIconMenu}
+           primaryText="Luis Avila"
+           secondaryText={
+             <p>
+               <span style={{color: darkBlack}}>Job Description</span><br />
+               We should eat this: grated squash. Corn and tomatillo tacos.
+             </p>
+           }
+           secondaryTextLines={2}
+         />
+       </List>
+   </div>
+);
+
+<div className="Post">
+  <RaisedButton type="submit" label="Post" backgroundColor=" #808080" style={styleb} />
+</div>
 
 
 export default Dashboard;
